@@ -5,23 +5,35 @@
 #
 
 QT       += testlib
-QT       -= gui
+QT       += gui webkitwidgets
 
 TARGET = integrationtest
 CONFIG += console testcase
 
 SOURCES += \
     discountmarkdownconvertertest.cpp \
+    htmlpreviewcontrollertest.cpp \
     jsonsnippetfiletest.cpp \
     main.cpp \
-    revealmarkdownconvertertest.cpp
+    revealmarkdownconvertertest.cpp \
+    ../../app/htmlpreviewcontroller.cpp
 
 HEADERS += \
     discountmarkdownconvertertest.h \
+    htmlpreviewcontrollertest.h \
     jsonsnippetfiletest.h \
-    revealmarkdownconvertertest.h
+    revealmarkdownconvertertest.h \
+    ../../app/htmlpreviewcontroller.h
 
 target.CONFIG += no_default_install
+
+#
+# Application
+# (TODO: think about how to restructure the code so that
+#        it's available to the test code. 
+#        Should it move to app-static library?)
+#
+INCLUDEPATH += $$PWD/../../app
 
 #
 # JSON configuration library
