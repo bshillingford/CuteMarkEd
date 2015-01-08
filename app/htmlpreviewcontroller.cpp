@@ -18,6 +18,8 @@
 
 #include <QWebView>
 
+static const qreal ZOOM_CHANGE_VALUE = 0.1;
+
 HtmlPreviewController::HtmlPreviewController(QWebView *view, QObject *parent) :
     QObject(parent),
     view(view)
@@ -26,12 +28,12 @@ HtmlPreviewController::HtmlPreviewController(QWebView *view, QObject *parent) :
 
 void HtmlPreviewController::zoomInView()
 {
-    view->setZoomFactor(view->zoomFactor() + 0.1);
+    view->setZoomFactor(view->zoomFactor() + ZOOM_CHANGE_VALUE);
 }
 
 void HtmlPreviewController::zoomOutView()
 {
-    view->setZoomFactor(view->zoomFactor() - 0.1);
+    view->setZoomFactor(view->zoomFactor() - ZOOM_CHANGE_VALUE);
 }
 
 void HtmlPreviewController::resetZoomOfView()
