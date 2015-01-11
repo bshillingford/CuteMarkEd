@@ -35,7 +35,8 @@ extern "C" {
 #ifdef Q_OS_WIN
 #include <Windows.h>
 #endif
-#include <mkdio.h>
+typedef int DWORD;
+#include "../3rdparty/discount/mkdio.h"
 }
 
 #include "markdowndocument.h"

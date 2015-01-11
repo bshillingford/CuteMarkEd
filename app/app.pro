@@ -162,10 +162,10 @@ win32-g++:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/discou
 else:win32-g++:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/discount/debug/ -ldiscount
 else:win32-msvc*:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/discount/release/ -llibdiscount
 else:win32-msvc*:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/discount/debug/ -llibdiscount
-else:unix: LIBS += -L/usr/lib -lmarkdown
+else:unix: LIBS += -L/usr/lib64 -l:libmarkdown.so.2
 
 win32:INCLUDEPATH += $$PWD/../3rdparty/discount
-unix:INCLUDEPATH += /usr/include
+#unix:INCLUDEPATH += /usr/include
 win32:DEPENDPATH += $$PWD/../3rdparty/discount
 
 # peg-markdown-highlight
@@ -202,7 +202,7 @@ with_hoedown {
 
     win32:CONFIG(release, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/hoedown/release/ -lhoedown
     else:win32:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/hoedown/debug/ -lhoedown
-    else:unix: LIBS += -L/usr/lib -lhoedown
+    else:unix: LIBS += -L/usr/lib64 -lhoedown
 
     win32 {
         INCLUDEPATH += $$PWD/../3rdparty/hoedown
@@ -210,7 +210,7 @@ with_hoedown {
     }
 
     unix {
-        INCLUDEPATH += /usr/include
+        #INCLUDEPATH += /usr/include
     }
 }
 

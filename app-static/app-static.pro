@@ -73,7 +73,7 @@ else:win32-msvc*:CONFIG(debug, debug|release): LIBS += -L$$OUT_PWD/../3rdparty/d
 else:unix: LIBS += -L/usr/lib -lmarkdown
 
 win32:INCLUDEPATH += $$PWD/../3rdparty/discount
-unix:INCLUDEPATH += /usr/include
+#unix:INCLUDEPATH += /usr/include
 win32:DEPENDPATH += $$PWD/../3rdparty/discount
 
 #
